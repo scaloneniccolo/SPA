@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      type="text/css" />
+   <link rel="stylesheet" type="text/css" href="./style.css" />
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+   <title>SPA semplice</title>
+</head>
+<body>
+    <div id="container" class="container">
+        <div id="home" class="page"></div>
+            <div class="row">PAGINA HOME</a></div>
+            <div class="row"><a href="#pagina1">WEB SOCKET</a></div>
+            <div class="row"><a href="#pagina2">TERMINI DI UTILIZZO</a></div>
+            <div class="row"><a href="#pagina3">DIAGRAMMI DI FLUSSO</a></div>
+        </div>
+            <div id="pagina1" class="page">
+                <div class="row"><p>Come funziona?</p>
+
+
+
+                    <p>In una chiamata <span class="glossaryLink"  aria-describedby="tt"  data-cmtooltip="&lt;div class=glossaryItemTitle&gt;HTTP&lt;/div&gt;&lt;div class=glossaryItemBody&gt;&amp;lt;!-- wp:paragraph --&amp;gt;Protocollo di livello applicazione che si basa su una architettura client-server dove il client invia richieste al server, ed il server restituisce risposte. E&amp;#039; la tecnologia principale del Web, usato dai browser, dalle applicazioni desktop e mobili, e costituisce una delle principali tecnologie di Internet.&amp;lt;br/&amp;gt;&amp;lt;!-- /wp:paragraph --&amp;gt;&lt;/div&gt;"  data-gt-translate-attributes='[{"attribute":"data-cmtooltip", "format":"html"}]'  tabindex='0' role='link'>http</span> abbiamo visto che la comunicazione avviene in questo modo:</p>
+                    
+                    
+                    
+                    <p>1) il client effettua una richiesta di handshake al server sulla porta indicata (di solito la 80) (SYN);</p>
+                    
+                    
+                    
+                    <p>2) il server avvia l&rsquo;handshake comunicando la porta effettiva di comunicazione (SYN/ACK);</p>
+                    
+                    
+                    
+                    <p>3) quando il client conferma (ACK) viene stabilita la connessione socket;</p>
+                    
+                    
+                    
+                    <p>4) il client invia la richiesta;</p>
+                    
+                    
+                    
+                    <p>5) il server invia la risposta.</p>
+                    
+                    
+                    
+                    <p><strong>Protocollo <span class="glossaryLink"  aria-describedby="tt"  data-cmtooltip="&lt;div class=glossaryItemTitle&gt;HTTP&lt;/div&gt;&lt;div class=glossaryItemBody&gt;&amp;lt;!-- wp:paragraph --&amp;gt;Protocollo di livello applicazione che si basa su una architettura client-server dove il client invia richieste al server, ed il server restituisce risposte. E&amp;#039; la tecnologia principale del Web, usato dai browser, dalle applicazioni desktop e mobili, e costituisce una delle principali tecnologie di Internet.&amp;lt;br/&amp;gt;&amp;lt;!-- /wp:paragraph --&amp;gt;&lt;/div&gt;"  data-gt-translate-attributes='[{"attribute":"data-cmtooltip", "format":"html"}]'  tabindex='0' role='link'>HTTP</span></strong></p>
+                    
+                    
+                    
+                    <figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="680" height="218" src="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-80.png" alt="" class="wp-image-604" srcset="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-80.png 680w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-80-300x96.png 300w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-80-230x74.png 230w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-80-350x112.png 350w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-80-480x154.png 480w" sizes="(max-width: 680px) 100vw, 680px"/></figure>
+                    
+                    
+                    
+                    <p>In WebSocket il punto 5 &egrave; sostituito da una risposta che attiva la creazione di un canale di comunicazione sempre aperto. Sia il server che il client possono quindi inviare in qualsiasi momento flussi di dati. Una WebSocket comporta quindi che non c&rsquo;&egrave; pi&ugrave; nessuna attesa di avviare un aconnessione tra client server, inoltre il server pu&ograve; inviare anch&rsquo;esso dati senza attendere richieste: in pratica la comunicazione &egrave; interamente bidirezionale.&nbsp;</p>
+                    
+                    
+                    
+                    <p><strong>Protocollo WebSocket</strong></p>
+                    
+                    
+                    
+                    <figure class="wp-block-image size-full"><img decoding="async" width="680" height="186" src="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-81.png" alt="" class="wp-image-605" srcset="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-81.png 680w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-81-300x82.png 300w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-81-230x63.png 230w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-81-350x96.png 350w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-81-480x131.png 480w" sizes="(max-width: 680px) 100vw, 680px"/></figure>
+                    
+                    
+                    
+                    <p>Gli utilizzi pratici sono numerosi: chat, videogiochi, aste on line, notizie, sistemi in tempo reale, IoT (dispositivi che comunicano informazioni al server), notifiche push al browser. Lo svantaggio principale sta nel fatto che il server deve tenere attive molte connessioni in contemporanea anche se non transitano dati, ma da test pratici in genere il carico di rete &egrave; poco oneroso.</p>
+                    
+                    
+                    
+                    <p>Websocket &egrave; disponibile, lato server, per la maggior parte delle piattaforme Web, come NodeJS, PHP, Java, Python, C++ e i linguaggi .NET (C#). Lato client viene usato Javascript oppure i linguaggi nativi per app mobile (Swift, Java, Kotlin).</p>
+                    
+                    
+                    
+                    <h2 class="wp-block-heading">Esempio pratico in NodeJS</h2>
+                    
+                    
+                    
+                    <p>Come esempio pratico in NodeJS vediamo passo passo la creazione di una WebSocket lato client e lato server.</p>
+                    
+                    
+                    
+                    <p>Partiamo dalla definizione del server. Per utilizzare le WebSocket useremo una libreria molto popolare, socket.io, che va installata tramite npm. Il resto del codice &egrave; quello che abbiamo gi&agrave; visto nelle lezioni precedenti.</p>
+                    
+                    
+                    
+                    <div class="hcb_wrap"><pre class="prism line-numbers lang-js" data-lang="JavaScript"><code>const fs = require('fs');
+                    
+                    const express = require(&quot;express&quot;);
+                    
+                    const <span class="glossaryLink"  aria-describedby="tt"  data-cmtooltip="&lt;div class=glossaryItemTitle&gt;HTTP&lt;/div&gt;&lt;div class=glossaryItemBody&gt;&amp;lt;!-- wp:paragraph --&amp;gt;Protocollo di livello applicazione che si basa su una architettura client-server dove il client invia richieste al server, ed il server restituisce risposte. E&amp;#039; la tecnologia principale del Web, usato dai browser, dalle applicazioni desktop e mobili, e costituisce una delle principali tecnologie di Internet.&amp;lt;br/&amp;gt;&amp;lt;!-- /wp:paragraph --&amp;gt;&lt;/div&gt;"  data-gt-translate-attributes='[{"attribute":"data-cmtooltip", "format":"html"}]'  tabindex='0' role='link'>http</span> = require(&quot;<span class="glossaryLink"  aria-describedby="tt"  data-cmtooltip="&lt;div class=glossaryItemTitle&gt;HTTP&lt;/div&gt;&lt;div class=glossaryItemBody&gt;&amp;lt;!-- wp:paragraph --&amp;gt;Protocollo di livello applicazione che si basa su una architettura client-server dove il client invia richieste al server, ed il server restituisce risposte. E&amp;#039; la tecnologia principale del Web, usato dai browser, dalle applicazioni desktop e mobili, e costituisce una delle principali tecnologie di Internet.&amp;lt;br/&amp;gt;&amp;lt;!-- /wp:paragraph --&amp;gt;&lt;/div&gt;"  data-gt-translate-attributes='[{"attribute":"data-cmtooltip", "format":"html"}]'  tabindex='0' role='link'>http</span>&quot;);
+                    
+                    const app = express();
+                    
+                    const path = require(&quot;path&quot;);
+                    
+                    const bodyParser = require(&quot;body-parser&quot;);
+                    
+                    const { Server } = require('socket.io');
+                    
+                    const conf = JSON.parse(fs.readFileSync(&quot;./conf.json&quot;));
+                    
+                    app.use(bodyParser.json());
+                    
+                    app.use(
+                    
+                    &nbsp;&nbsp;bodyParser.urlencoded({
+                    
+                    &nbsp;&nbsp;&nbsp;&nbsp;extended: true,
+                    
+                    &nbsp;&nbsp;}),
+                    
+                    );
+                    
+                    app.use(&quot;/&quot;, express.static(path.join(__dirname, &quot;public&quot;)));
+                    
+                    const server = <span class="glossaryLink"  aria-describedby="tt"  data-cmtooltip="&lt;div class=glossaryItemTitle&gt;HTTP&lt;/div&gt;&lt;div class=glossaryItemBody&gt;&amp;lt;!-- wp:paragraph --&amp;gt;Protocollo di livello applicazione che si basa su una architettura client-server dove il client invia richieste al server, ed il server restituisce risposte. E&amp;#039; la tecnologia principale del Web, usato dai browser, dalle applicazioni desktop e mobili, e costituisce una delle principali tecnologie di Internet.&amp;lt;br/&amp;gt;&amp;lt;!-- /wp:paragraph --&amp;gt;&lt;/div&gt;"  data-gt-translate-attributes='[{"attribute":"data-cmtooltip", "format":"html"}]'  tabindex='0' role='link'>http</span>.createServer(app);
+                    
+                    const io = new Server(server);
+                    
+                    server.listen(conf.port, () =&gt; {
+                    
+                    &nbsp;&nbsp;console.log(&quot;server running on port: &quot; + conf.port);
+                    
+                    });</code></pre></div>
+                    
+                    
+                    
+                    <p>Dopo aver importato la libreria e l&rsquo;oggetto Server, si inizializza una istanza di socket.io passando al costruttore l&rsquo;istanza del server Express.</p>
+                    
+                    
+                    
+                    <p>La gestione delle socket &egrave; quella tipica di Javascript, quindi tramite eventi e callback.</p>
+                    
+                    
+                    
+                    <p>Ad esempio possiamo verificare se un nuovo client &egrave; connesso con queste istruzioni:</p>
+                    
+                    
+                    
+                    <div class="hcb_wrap"><pre class="prism line-numbers lang-plain"><code>io.on('connection', (socket)&nbsp;=&gt; {
+                    
+                    &nbsp;&nbsp;console.log(&quot;socket connected: &quot; +&nbsp;socket.id);
+                    
+                    });</code></pre></div>
+                    
+                    
+                    
+                    <p>L&rsquo;oggetto socket &egrave; la rappresentazione della comunicazione tra il server ed uno specifico client. Va ricordato infatti che un server pu&ograve; tenere attive in contemporanea molte socket.&nbsp;</p>
+                    
+                    
+                    
+                    <p>Passiamo al client. Creiamo prima di tutto una pagina html base (con gi&agrave; Bootstrap):</p>
+                    
+                    
+                    
+                    <div class="hcb_wrap"><pre class="prism line-numbers lang-html" data-lang="HTML"><code>&lt;!doctype html&gt;
+                    &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0&quot;&gt;
+                        &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css&quot; /&gt;    
+                        &lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+                        &lt;script src=&quot;/socket.io/socket.io.js&quot;&gt;&lt;/script&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;    
+                        
+                        &lt;script type=&quot;application/javascript&quot; src=&quot;index.js&quot;&gt;&lt;/script&gt;
+                    &lt;/body&gt;
+                    &lt;/html&gt;
+                    </code></pre></div>
+                    
+                    
+                    
+                    <p>JS:</p>
+                    
+                    
+                    
+                    <div class="hcb_wrap"><pre class="prism line-numbers lang-js" data-lang="JavaScript"><code>const socket = io();</code></pre></div>
+                    
+                    
+                    
+                    <p>La url &ldquo;<code>/socket.io/socket.io.js</code>&rdquo; &egrave; gi&agrave; messa a disposizione dalla libreria socket.io e contiene il codice lato client per far funzionare le websocket. Quando viene eseguita la pagina e questa istruzione, si vedr&agrave; che automaticamente JS crea una connessione socket, e lato server vedremo in console un messaggio come questo:</p>
+                    
+                    
+                    
+                    <p><code>socket connected: 11d8ZNn0l7zeWAkLAAAB</code></p>
+                    
+                    
+                    
+                    <p>Adesso proviamo a creare una chat rudimentale dove ogni client che si connette ha una form dove inserire del testo e ad ogni invio questo testo viene rimandato a tutti i client connessi. Per semplicit&agrave; useremo come nome del client l&rsquo;id della socket utilizzata. E&rsquo; la base per una chat pi&ugrave; strutturata che verr&agrave; data come esercizio.</p>
+                    
+                    
+                    
+                    <p>Torniamo al server. Il codice da aggiungere &egrave; il seguente:</p>
+                    
+                    
+                    
+                    <div class="hcb_wrap"><pre class="prism line-numbers lang-js" data-lang="JavaScript"><code>io.on('connection', (socket) =&gt; {
+                    
+                    &nbsp;&nbsp;console.log(&quot;socket connected: &quot; + socket.id);
+                    
+                    &nbsp;&nbsp;io.emit(&quot;chat&quot;, &quot;new client: &quot; + socket.id);
+                    
+                    &nbsp;&nbsp;socket.on('message', (message) =&gt; {
+                    
+                    &nbsp;&nbsp;&nbsp;&nbsp;const response = socket.id + ': ' + message;
+                    
+                    &nbsp;&nbsp;&nbsp;&nbsp;console.log(response);
+                    
+                    &nbsp;&nbsp;&nbsp;&nbsp;io.emit(&quot;chat&quot;, response);
+                    
+                    &nbsp;&nbsp;});
+                    
+                    });</code></pre></div>
+                    
+                    
+                    
+                    <p>In pratica ad ogni nuova connessione istruiamo eventi ed azioni da fare con la specifica socket che si &egrave; appena connessa. Vediamo le due nuove istruzioni:</p>
+                    
+                    
+                    
+                    <p><strong>&ndash; io.emit(key, message)</strong>: questa funzione invia in broadcast a tutte le socket il messaggio&nbsp;<em>message</em>, come evento di nome&nbsp;<em>key</em>. E&rsquo; quindi possibile utilizzare chiavi diverse per inviare messaggi di tipo diverso e configurare il client come vedremo tra poco per ascoltare messaggi solo con una determinata&nbsp;<em>key</em>. Esiste anche la funzione (qui non presente)&nbsp;<strong>socket.emit(key, message)</strong>&nbsp;che permette di inviare ad una specifica socket un messaggio, utile per inviare comunicazioni riservate. Si ricorda che il messaggio &egrave; un qualsiasi oggetto JS (anche dizionari ed array).</p>
+                    
+                    
+                    
+                    <p>&ndash;&nbsp;<strong>socket.on(key, callback):</strong>&nbsp;questa funzione ha il comportamento opposto, intercetta comunicazioni dalla socket con cui ci siamo appena connessi. In questo esempio specifico il messaggio ricevuto viene composto in un nuovo messaggio che contiene anche il nome della socket mittente ed inviato a tutte le socket (compreso il mittente). E&rsquo; un meccanismo tipico delle chat: un client manda un messaggio al server, il server lo reinvia a tutti i client.&nbsp;</p>
+                    
+                    
+                    
+                    <p>Vediamo il resto del codice client. Partiamo dall&rsquo;HTML:</p>
+                </div>
+                    
+                    
+                    
+                    <div class="hcb_wrap"><pre class="prism line-numbers lang-html" data-lang="HTML"><code>&lt;body&gt;    
+                        &lt;div class=&quot;container&quot;&gt;
+                        &lt;ul id=&quot;chat&quot; class=&quot;list-group&quot;&gt;
+                        &lt;/ul&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;row mt-4&quot;&gt;
+                        &lt;input id=&quot;input&quot; class=&quot;form-control&quot; /&gt;
+                        &lt;button id=&quot;sendButton&quot; type=&quot;button&quot; class=&quot;btn btn-success&quot;&gt;Send&lt;/button&gt;
+                        &lt;/div&gt;    
+                        &lt;script type=&quot;application/javascript&quot; src=&quot;index.js&quot;&gt;&lt;/script&gt;
+                    &lt;/body&gt;
+                    </code></pre></div>
+                    
+                    
+                    
+                    <p>JS:</p>
+                    
+                    
+                    
+                    <div class="hcb_wrap"><pre class="prism line-numbers lang-js" data-lang="JavaScript"><code>const input = document.getElementById(&quot;input&quot;);
+                    const button = document.getElementById(&quot;sendButton&quot;);
+                    const chat = document.getElementById(&quot;chat&quot;);
+                    
+                    const template = &quot;&lt;li class=\&quot;list-group-item\&quot;&gt;%MESSAGE&lt;/li&gt;&quot;;
+                    const messages = [];
+                    
+                    const socket = io();
+                    
+                    input.onkeydown = (event) =&gt; {
+                    
+                    if (event.keyCode === 13) {
+                        event.preventDefault();
+                        button.click();
+                    }
+                    }
+                    
+                    button.onclick = () =&gt; {
+                    socket.emit(&quot;message&quot;, input.value);
+                    input.value = &quot;&quot;;
+                    }
+                    
+                    socket.on(&quot;chat&quot;, (message) =&gt; {
+                    console.log(message);
+                    messages.push(message);
+                    render();
+                    })
+                    
+                    const render = () =&gt; {
+                    let html = &quot;&quot;;
+                    messages.forEach((message) =&gt; {
+                        const row = template.replace(&quot;%MESSAGE&quot;, message);
+                        html+=row;
+                    });
+                    chat.innerHTML = html;
+                    window.scrollTo(0, document.body.scrollHeight);
+                    </code></pre></div>
+                    
+                    
+                    
+                    <p>Qui le istruzioni sono socket.emit e socket.on, analoghe a quelle viste lato server.</p>
+                    
+                    
+                    
+                    <p>Provare a testarlo con almeno due client connessi.</p>
+                    
+                    
+                    
+                    <h2 class="wp-block-heading">Disconnessione</h2>
+                    
+                    
+                    
+                    <p>E&rsquo; possibile intercettare anche la disconnessione dell&rsquo;utente con questo codice lato server:</p>
+                    
+                    
+                    
+                    <div class="hcb_wrap"><pre class="prism line-numbers lang-plain"><code>socket.on('disconnect', () =&gt; {
+                    &nbsp;&nbsp;&nbsp;&nbsp;console.log('user disconnected');
+                    &nbsp;&nbsp;});</code></pre></div>
+                    
+                    
+                    
+                    <p>Ogni volta che una socket si disconnette mandare un messaggio in broadcast indicando che quella socket si &egrave; disconnessa.</p></div>
+                <div class="row"><a href="#home">Ritorna alla homepage</a></div>
+            </div>
+
+
+
+            <div id="pagina2" class="page">
+                    <h3 class="wp-block-heading"><strong>Tu sei libero di:</strong></h3>
+
+                    <ol class="wp-block-list">
+                    <li><strong>Condividere</strong>&nbsp;&mdash; riprodurre, distribuire, comunicare al pubblico, esporre in pubblico, rappresentare, eseguire e recitare questo materiale con qualsiasi mezzo e formato</li>
+
+
+
+                    <li>Il licenziante non pu&ograve; revocare questi diritti fintanto che tu rispetti i termini della licenza.</li>
+                    </ol>
+
+
+
+                    <h3 class="wp-block-heading">Condizioni di utilizzo</h3>
+
+
+
+                    <ol class="wp-block-list">
+                    <li><strong>Attribuzione</strong>&nbsp;&mdash; Devi riconoscere&nbsp;<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.it#ref-appropriate-credit">una menzione di paternit&agrave; adeguata</a>, fornire un link alla licenza e&nbsp;<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.it#ref-indicate-changes">indicare se sono state effettuate delle modifiche</a>&nbsp;. Puoi fare ci&ograve; in qualsiasi maniera ragionevole possibile, ma non con modalit&agrave; tali da suggerire che il licenziante avalli te o il tuo utilizzo del materiale.</li>
+
+
+
+                    <li><strong>NonCommerciale</strong>&nbsp;&mdash; Non puoi utilizzare il materiale per&nbsp;<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.it#ref-commercial-purposes">scopi commerciali</a>&nbsp;.</li>
+                <div class="row"><a href="#home">HOMEPAGE</a></div>
+            </div>
+
+
+
+                        
+            <div id="pagina3" class="page">
+                <p><strong>Un programma per computer</strong>&nbsp;&egrave; un insieme di istruzioni codificate che il computer esegue per svolgere uno o pi&ugrave; determinati compiti. Si ricorda che un programma &egrave; memorizzato nella memoria centrale, viene eseguito dalla CPU, e funziona mediante l&rsquo;elaborazione di dati ed informazioni, che riceve dal mondo esterno tramite le periferiche di INPUT, come ad esempio la tastiera il mouse, e di OUTPUT, come ad esempio il monitor.&nbsp;</p>
+
+
+
+                <p>Le istruzioni di un programma eseguono un algoritmo, cio&egrave; una sequenza di istruzioni matematiche e logiche che permettono di ottenere un risultato partendo da dei dati e delle informazioni. I programmi pi&ugrave; complessi possono comprendere anche pi&ugrave; algoritmi che collaborano tra loro per svolgere operazioni complesse.</p>
+
+
+
+                <p>Ricordiamo le 6 caratteristiche di un algoritmo:</p>
+
+
+
+                <p>&ndash;&nbsp;<strong>correttezza</strong>: deve funzionare correttamente;</p>
+
+
+
+                <p>&ndash;&nbsp;<strong>generalit&agrave;</strong>: non deve dipendere da un set di dati particolare;</p>
+
+
+
+                <p>&ndash;&nbsp;<strong>finitezza</strong>: deve avere un numero finito di istruzioni per terminare;</p>
+
+
+
+                <p>&ndash;&nbsp;<strong>efficienza</strong>: non deve fare operazioni inutili;</p>
+
+
+
+                <p>&ndash;&nbsp;<strong>non ambiguit&agrave;</strong>: le istruzioni non devono essere ambigue o contradditorie;</p>
+
+
+
+                <p><strong>&ndash; completezza</strong>: devono essere considerati tutti i casi possibili;</p>
+
+
+
+                <p>Prima di poter scrivere un programma per computer &egrave; necessario quindi imparare a scrivere algoritmi, capirne le logiche di progettazione, imparare e gestire i dati e la loro elaborazione.</p>
+
+
+
+                <p>Per questa ragione possiamo usare i diagrammi di flusso.</p>
+
+
+
+                <h2 class="wp-block-heading"><strong>Diagrammi di flusso</strong></h2>
+
+
+
+                <p>I diagrammi di flusso prevedono quattro simboli che indicano le quattro operazioni fondamentali di un algoritmo:</p>
+
+
+
+                <p>&ndash;&nbsp;<strong>inizio</strong>&nbsp;o&nbsp;<strong>fine</strong>;</p>
+
+
+
+                <p>&ndash;&nbsp;<strong>input</strong>&nbsp;o&nbsp;<strong>output</strong>;</p>
+
+
+
+                <p>&ndash;&nbsp;<strong>assegnazione</strong>&nbsp;e/o&nbsp;<strong>calcolo</strong>&nbsp;di espressioni;</p>
+
+
+
+                <p>&ndash; verifica di&nbsp;<strong>condizioni</strong>.</p>
+
+
+
+                <p>Tutti i simboli sono connessi tra loro da frecce direzionali.</p>
+
+
+
+                <figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="390" height="490" src="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-28.png" alt="" class="wp-image-452" srcset="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-28.png 390w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-28-239x300.png 239w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-28-230x289.png 230w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-28-350x440.png 350w" sizes="(max-width: 390px) 100vw, 390px"/></figure>
+
+
+
+                <p>Tutti i simboli hanno un solo connettore in ingresso ed uno solo in uscita, tranne la condizione che ha due connettori in uscita.&nbsp;</p>
+
+
+
+                <p>Come vedremo, possiamo rappresentare con questi quattro simboli qualsiasi programma per computer<a href="applewebdata://CAC4C9B7-F2B6-415E-92E1-EADAB6B00367#_ftn1"><sup>[1]</sup></a>.</p>
+
+
+
+                <h3 class="wp-block-heading"><strong>Esempio: calcolo della somma di due numeri.</strong></h3>
+
+
+
+                <p>Questo programma richiede in input due numeri a e b e restituisce un risultato c pari ad a+b.</p>
+
+
+
+                <figure class="wp-block-image size-large"><img decoding="async" width="748" height="1024" src="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-29-748x1024.png" alt="" class="wp-image-453" srcset="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-29-748x1024.png 748w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-29-219x300.png 219w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-29-768x1052.png 768w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-29-230x315.png 230w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-29-350x479.png 350w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-29-480x657.png 480w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-29.png 818w" sizes="(max-width: 748px) 100vw, 748px"/></figure>
+
+
+
+                <p>Come si vede l&rsquo;utente interagisce con gli input output (parallelogramma), mentre la memoria del computer memorizza valori immessi in input (parallelogramma) oppure calcolati. Inoltre la memoria del computer contiene i valori inviati all&rsquo;utente tramite output.&nbsp;</p>
+
+
+
+                <p>Per memorizzare valori introduciamo il concetto di&nbsp;<strong>variabile</strong>: una variabile &egrave; una area di memoria, identificata con un nome (detto&nbsp;<strong>identificatore</strong>, ad esempio &ldquo;a&rdquo; o &ldquo;b&rdquo;) che contiene un&nbsp;<strong>valore</strong>. Questo valore pu&ograve; cambiare anche nel corso del programma, per questo si chiama appunto &ldquo;variabile&rdquo;.</p>
+
+
+
+                <p>E&rsquo; l&rsquo;utente che stabilisce il valore della variabile, quindi il programma deve funzionare senza conoscere il valore della variabile, per rispettare il principio di generalit&agrave;.</p>
+
+
+
+                <h3 class="wp-block-heading"><strong>Esempio: pari o dispari</strong></h3>
+
+
+
+                <p>Questo programma richiede un numero a, e dice se &egrave; pari o dispari.</p>
+
+
+
+                <figure class="wp-block-image size-full"><img decoding="async" width="544" height="944" src="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-30.png" alt="" class="wp-image-454" srcset="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-30.png 544w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-30-173x300.png 173w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-30-230x399.png 230w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-30-350x607.png 350w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-30-480x833.png 480w" sizes="(max-width: 544px) 100vw, 544px"/></figure>
+
+
+
+                <p>Come si vede, dopo l&rsquo;input, il programma effettua una verifica: &ldquo;a%2==0&rdquo;. Il simbolo &ldquo;%&rdquo; indica il resto della divisione, mentre &ldquo;==&rdquo; indica un confronto di uguaglianza. Questa espressione &egrave; VERA se a % 2 &egrave; uguale a 0, altrimenti &egrave; FALSA. Ad esempio, con a=4 l&rsquo;espressione &egrave; vera: a%2 &egrave; infatti uguale a 0. Invece con a=5, l&rsquo;espressione &egrave; FALSA.</p>
+
+
+
+                <p>Come si vede, vengono rispettate tutte le caratteristiche di un algoritmo:</p>
+
+
+
+                <p>&ndash;&nbsp;<strong>correttezza</strong>: qualsiasi sia il numero inserito, il risultato &egrave; corretto;</p>
+
+
+
+                <p>&ndash;&nbsp;<strong>generalit&agrave;</strong>: l&rsquo;algoritmo non dipende da un particolare input;</p>
+
+
+
+                <p>&ndash;&nbsp;<strong>finitezza</strong>: l&rsquo;algoritmo in qualsiasi caso termina in un numero finito di istruzioni;</p>
+
+
+
+                <p>&ndash;&nbsp;<strong>efficienza</strong>: l&rsquo;algoritmo non si perde in inutili calcoli.</p>
+
+
+
+                <p>&ndash;&nbsp;<strong>non ambiguit&agrave;</strong>: non ci sono contraddizioni;</p>
+
+
+
+                <p><strong>&ndash; completezza</strong>: sono considerati tutti i casi possibili;</p>
+
+
+
+                <p><strong>Esempio: conta fino a n</strong></p>
+
+
+
+                <p>In questo programma chiediamo all&rsquo;utente un numero n, ma stavolta stampiamo tutti i valori da 1 a n.</p>
+
+
+
+                <p>Stavolta non basta calcolare una espressione, ma dobbiamo usare un contatore e soprattutto un ciclo.</p>
+
+
+
+                <figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="380" height="902" src="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-31.png" alt="" class="wp-image-455" srcset="https://cipiaceinfo.it/wp-content/uploads/2024/07/image-31.png 380w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-31-126x300.png 126w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-31-230x546.png 230w, https://cipiaceinfo.it/wp-content/uploads/2024/07/image-31-350x831.png 350w" sizes="auto, (max-width: 380px) 100vw, 380px"/></figure>
+
+
+
+                <p>Vediamo i passaggi:</p>
+
+
+
+                <p>1) Viene richiesto n</p>
+
+
+
+                <p>2) La variabile i viene inizializzata ad 1.</p>
+
+
+
+                <p>3) La variabile i viene stampata.</p>
+
+
+
+                <p>4) i viene incrementata di 1.</p>
+
+
+
+                <p>5) Se i &egrave; ancora minore o uguale a n, si torna al punto 3, altrimenti si va al punto 6</p>
+
+
+
+                <p>6) fine.</p>
+
+
+
+                <p>Ad esempio per n= 5 avremo:</p>
+
+
+
+                <p>i=1 -&gt; si torna al punto 3 perch&egrave; i&lt;=5</p>
+
+
+
+                <p>i=2 -&gt; si torna al punto 3 perch&egrave; i&lt;=5</p>
+
+
+
+                <p>i=3 -&gt; si torna al punto 3 perch&egrave; i&lt;=5</p>
+
+
+
+                <p>i=4 -&gt; si torna al punto 3 perch&egrave; i&lt;=5</p>
+
+
+
+                <p>i=5 -&gt; si torna al punto 3 perch&egrave; i&lt;=5</p>
+
+
+
+                <p>i=6 -&gt; si va al punto 7, perch&egrave; i &gt; 5</p>
+
+
+
+                <p>I punti 3-4-5 vengono effettuati molte volte: per la precisione n volte.&nbsp;</p>
+
+
+
+                <p>Ogni ripetizione si chiama&nbsp;<strong>ciclo</strong>.</p>
+
+
+
+                <p>Il numero di cicli &egrave; determinato da n.&nbsp;</p>
+
+
+
+                <p>Con n=10 avremo 10 cicli, con n=1000 avremo 1000 cicli e cos&igrave; via. E&rsquo; possibile anche avere milioni di cicli, scegliendo n molto grande.</p>
+
+
+
+                <p>Come possiamo vedere anche un algoritmo semplice, con solo 7 passaggi come in questo diagramma di flusso, pu&ograve; portare all&rsquo;esecuzione, grazie ai cicli, di migliaia o milioni di cicli.</p>
+
+
+
+                <p>Tuttavia l&rsquo;algoritmo mantiene sempre le sue quattro caratteristiche:</p>
+
+
+
+                <p>&ndash;&nbsp;<strong>correttezza</strong>: qualsiasi sia il numero inserito, il risultato &egrave; corretto;</p>
+
+
+
+                <p>&ndash;&nbsp;<strong>generalit&agrave;</strong>: l&rsquo;algoritmo non dipende da un particolare input;</p>
+
+
+
+                <p>&ndash;&nbsp;<strong>finitezza</strong>: l&rsquo;algoritmo in qualsiasi caso termina in un numero finito di istruzioni;</p>
+
+
+
+                <p>&ndash;&nbsp;<strong>efficienza</strong>: l&rsquo;algoritmo non si perde in inutili calcoli.</p>
+
+
+
+                <p>&ndash;&nbsp;<strong>non ambiguit&agrave;</strong>: non ci sono contraddizioni;</p>
+
+
+
+                <p><strong>&ndash; completezza</strong>: sono considerati tutti i casi possibili;</p>
+                <div class="row"><a href="#home">HOMEPAGE</a></div>
+            </div>
+    </div>
+    <script type="module" src="./index.js"></script>
+</body>
+</html>
